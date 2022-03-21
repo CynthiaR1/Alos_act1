@@ -1,0 +1,19 @@
+1- modification
+
+var unirest = require("unirest")
+var req = unirest("GET", "https://my-json-server.typicode.com/GloireM05/alos_tp1/db?$top=10")
+req.headders({ "cache-control": "no-cache" ,})
+req.end(function (res){ if (res.error) throw new Error(res.error) 
+				console.log(res.body) })
+
+2-fonction
+
+var unirest = require("unirest")
+var req = unirest("GET", "https://my-json-server.typicode.com/GloireM05/alos_tp1/db?$filter = startswith(displayName, 'M')")
+req.headders({ "cache-control": "no-cache" ,})
+req.end(function (res){ if (res.error) throw new Error(res.error) 
+				console.log(res.body) })
+
+3-Signification
+Elle signifie que la requete http se produit a chaque fois, mais qu'elle peut sauter le telechargement du corps http si le contenu est valide.
+
